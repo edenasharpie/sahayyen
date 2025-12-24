@@ -1,2 +1,2 @@
 # sahayyen
-cutom made personal home assistant 
+custom made personal home assistant made to run on a raspberry pi
