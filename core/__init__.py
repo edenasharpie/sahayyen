@@ -20,7 +20,7 @@ class Core:
     
     def cleanup(self) -> None:
         """
-        Clean up all scheduled tasks.
+        Cleans up all scheduled tasks.
         """
         self.scheduler.cancel_all()
 

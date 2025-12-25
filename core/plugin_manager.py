@@ -15,8 +15,11 @@ class PluginManager:
         Initialize the PluginManager with core services.
         
         :param event_bus: The EventBus instance
+        :type event_bus: EventBus
         :param state_store: The StateStore instance
+        :type state_store: StateStore
         :param scheduler: The Scheduler instance
+        :type scheduler: Scheduler
         """
         self._plugins: dict[str, Plugin] = {}
         self._event_bus = event_bus
@@ -28,6 +31,7 @@ class PluginManager:
         Load a plugin from a Python file.
 
         :param plugin_path: Path to the plugin Python file
+        :type plugin_path: str
         :return: The name of the loaded plugin
         :rtype: str
         """

@@ -17,7 +17,7 @@ class StateStore:
         self._event_bus = event_bus
         self._handlers: dict[str, list[Callable[[Any, Any], Awaitable[None]]]] = {}
     
-    def get(self, key: str, default=None) -> Any | None:
+    def get(self, key: str, default: Any | None = None) -> Any | None:
         """
         Get the current value for a key.
 
@@ -30,13 +30,14 @@ class StateStore:
         """
         return self._state.get(key, default)
 
-    async def set(self, key: str, value, *, source=None) -> None:
+    async def set(self, key: str, value: Any, *, source: Any | None=None) -> None:
         """
         Set a value and notify subscribers of the change.
 
         :param key: The key to set
         :type key: str
-        :param value: The value to set
+        :param value: The value to set it as
+        :type value: Any
         :param source: Optional source identifier for the change
         :type source: Any | None
         """
