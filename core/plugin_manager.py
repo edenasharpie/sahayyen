@@ -74,8 +74,12 @@ class PluginManager:
         """
         if name not in self._plugins:
             raise KeyError(f"Plugin not found: {name}")
-        
+
         plugin = self._plugins[name]
+
+        # cancel any scheduled tasks owned by the plugin
+        self._scheduler.cancel_owner(name)
+
         await plugin.stop()
         del self._plugins[name]
 
